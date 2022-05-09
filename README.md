@@ -4,4 +4,9 @@ Projet Esirem visant à programmer une interface permettant de contrôler un rob
 
 Lien vers le sujet et les documentations : https://github.com/dginhac/wifibot
 
-# Tâches
+***
+
+# Equipe
+- IMHOFF Guillaume
+- CHENY Valentin
+- COUTAREL Allan
