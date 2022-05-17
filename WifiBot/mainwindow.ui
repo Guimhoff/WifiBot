@@ -17,39 +17,21 @@
    <widget class="QPushButton" name="Connection">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>160</y>
-      <width>80</width>
-      <height>24</height>
+      <x>30</x>
+      <y>30</y>
+      <width>731</width>
+      <height>491</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Connexion</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Disconnection">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>260</y>
-      <width>80</width>
-      <height>24</height>
-     </rect>
+    <property name="font">
+     <font>
+      <family>8514oem</family>
+     </font>
     </property>
     <property name="text">
-     <string>Déconnexion</string>
+     <string>Connection</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>21</height>
-    </rect>
-   </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
