@@ -16,12 +16,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Connection_clicked()
 {
-
+    robot.doConnect();
 }
 
 
 void MainWindow::on_Disconnection_clicked()
 {
-
+    robot.disConnect();
 }
-
