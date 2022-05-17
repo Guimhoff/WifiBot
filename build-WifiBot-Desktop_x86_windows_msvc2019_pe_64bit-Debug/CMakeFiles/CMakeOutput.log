@@ -1,0 +1,34 @@
+The system is: Windows - 10.0.19043 - AMD64
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: D:/Logiciels/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/HostX64/x64/cl.exe 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Compilateur d'optimisation Microsoft (R) C/C++ version 19.29.30145 pour x64
+Copyright (C) Microsoft Corporation. Tous droits réservés.
+
+CMakeCXXCompilerId.cpp
+Microsoft (R) Incremental Linker Version 14.29.30145.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:CMakeCXXCompilerId.exe 
+CMakeCXXCompilerId.obj 
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.exe"
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.obj"
+
+The CXX compiler identification is MSVC, found in "D:/GitHub/WifiBot/build-WifiBot-Desktop_x86_windows_msvc2019_pe_64bit-Debug/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.exe"
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: D:/GitHub/WifiBot/build-WifiBot-Desktop_x86_windows_msvc2019_pe_64bit-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/Logiciels/Microsoft Visual Studio/2019/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_a9e27 && [1/2] Building CXX object CMakeFiles\cmTC_a9e27.dir\CMakeCXXCompilerABI.cpp.obj
+Remarque : inclusion du fichier :  D:\Logiciels\QT_Creator\Tools\CMake_64\share\cmake-3.21\Modules\CMakeCompilerABI.h
+[2/2] Linking CXX executable cmTC_a9e27.exe
+
+
+

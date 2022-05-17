@@ -1,0 +1,5 @@
+D:/GitHub/WifiBot/build-WifiBot-Desktop_x86_windows_msvc2019_pe_64bit-Debug/CMakeFiles/rebuild_cache.dir
+D:/GitHub/WifiBot/build-WifiBot-Desktop_x86_windows_msvc2019_pe_64bit-Debug/CMakeFiles/WifiBot.dir
+D:/GitHub/WifiBot/build-WifiBot-Desktop_x86_windows_msvc2019_pe_64bit-Debug/CMakeFiles/edit_cache.dir
+D:/GitHub/WifiBot/build-WifiBot-Desktop_x86_windows_msvc2019_pe_64bit-Debug/CMakeFiles/WifiBot_autogen_timestamp_deps.dir
+D:/GitHub/WifiBot/build-WifiBot-Desktop_x86_windows_msvc2019_pe_64bit-Debug/CMakeFiles/WifiBot_autogen.dir
