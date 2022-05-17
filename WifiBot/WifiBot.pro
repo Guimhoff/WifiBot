@@ -11,15 +11,17 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    myrobot.cpp
+    myrobot.cpp \
+    robotcontroller.cpp
 
 HEADERS += \
     mainwindow.h \
-    myrobot.h
+    myrobot.h \
+    robotcontroller.h
 
 FORMS += \
     mainwindow.ui \
-    robotControl.ui
+    robotcontroller.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
