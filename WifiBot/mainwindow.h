@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "myrobot.h"
+#include "robotcontroller.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,5 +25,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     MyRobot robot;
+    robotController r;
 };
 #endif // MAINWINDOW_H

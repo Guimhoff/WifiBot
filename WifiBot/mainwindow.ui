@@ -29,7 +29,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Connection</string>
+     <string>Connexion au robot</string>
     </property>
    </widget>
   </widget>

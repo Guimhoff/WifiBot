@@ -17,4 +17,6 @@ MainWindow::~MainWindow()
 void MainWindow::on_Connection_clicked()
 {
     robot.doConnect();
+    this->close();
+    r.show();
 }

@@ -12,3 +12,8 @@ robotController::~robotController()
 {
     delete ui;
 }
+
+void robotController::on_pushButton_9_clicked()
+{
+    robot.disConnect();
+}
