@@ -1,6 +1,1 @@
-
-build-WifiBot-Desktop_x86_windows_msvc2019_pe_64bit-Debug/.qtc_clangd/compile_commands.json
-
-build-WifiBot-Desktop_x86_windows_msvc2019_pe_64bit-Debug
-
-build-WifiBot-Desktop_Qt_5_15_2_MSVC2019_64bit-Debug
+.gitignore
