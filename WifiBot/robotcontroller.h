@@ -17,8 +17,10 @@ public:
     ~robotController();
     void setRobot(MyRobot *robot);
 
+
+
 private slots:
-    void on_pushButton_9_clicked();
+    void on_disconnectButt_clicked();
 
 private:
     Ui::robotController *ui;

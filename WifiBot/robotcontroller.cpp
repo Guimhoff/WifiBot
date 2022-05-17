@@ -18,7 +18,9 @@ void robotController::setRobot(MyRobot *robot)
     this->robot = robot;
 }
 
-void robotController::on_pushButton_9_clicked()
+
+void robotController::on_disconnectButt_clicked()
 {
     robot->disConnect();
 }
+
