@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
@@ -24,8 +23,6 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QPushButton *Connection;
-    QPushButton *Disconnection;
-    QMenuBar *menubar;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -37,15 +34,11 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         Connection = new QPushButton(centralwidget);
         Connection->setObjectName(QString::fromUtf8("Connection"));
-        Connection->setGeometry(QRect(360, 160, 80, 24));
-        Disconnection = new QPushButton(centralwidget);
-        Disconnection->setObjectName(QString::fromUtf8("Disconnection"));
-        Disconnection->setGeometry(QRect(360, 260, 80, 24));
+        Connection->setGeometry(QRect(30, 30, 731, 491));
+        QFont font;
+        font.setFamily(QString::fromUtf8("8514oem"));
+        Connection->setFont(font);
         MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 21));
-        MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
@@ -58,8 +51,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        Connection->setText(QCoreApplication::translate("MainWindow", "Connexion", nullptr));
-        Disconnection->setText(QCoreApplication::translate("MainWindow", "D\303\251connexion", nullptr));
+        Connection->setText(QCoreApplication::translate("MainWindow", "Connexion au robot", nullptr));
     } // retranslateUi
 
 };
