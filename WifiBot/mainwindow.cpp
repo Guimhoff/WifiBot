@@ -13,3 +13,15 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_Connection_clicked()
+{
+
+}
+
+
+void MainWindow::on_Disconnection_clicked()
+{
+
+}
+
