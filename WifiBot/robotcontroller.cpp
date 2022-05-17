@@ -13,7 +13,12 @@ robotController::~robotController()
     delete ui;
 }
 
+void robotController::setRobot(MyRobot *robot)
+{
+    this->robot = robot;
+}
+
 void robotController::on_pushButton_9_clicked()
 {
-    robot.disConnect();
+    robot->disConnect();
 }

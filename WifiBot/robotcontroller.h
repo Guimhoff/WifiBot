@@ -15,13 +15,14 @@ class robotController : public QWidget
 public:
     explicit robotController(QWidget *parent = nullptr);
     ~robotController();
+    void setRobot(MyRobot *robot);
 
 private slots:
     void on_pushButton_9_clicked();
 
 private:
     Ui::robotController *ui;
-    MyRobot robot;
+    MyRobot *robot;
 };
 
 #endif // ROBOTCONTROLLER_H
