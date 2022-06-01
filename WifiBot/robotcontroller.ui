@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1558</width>
-    <height>618</height>
+    <width>1267</width>
+    <height>698</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,6 +15,9 @@
   </property>
   <property name="layoutDirection">
    <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(68, 68, 68);</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>
@@ -29,8 +32,12 @@
          <property name="font">
           <font>
            <pointsize>18</pointsize>
+           <weight>50</weight>
            <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Batterie&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -75,8 +82,11 @@
              <pointsize>10</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
            <property name="text">
-            <string>Ping: 99999 ms</string>
+            <string>Ping: 999 ms</string>
            </property>
           </widget>
          </item>
@@ -110,12 +120,16 @@
           <font>
            <family>Impact</family>
            <pointsize>25</pointsize>
+           <weight>50</weight>
            <bold>false</bold>
            <kerning>true</kerning>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 0, 0);</string>
+         </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Attention obstacle !&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Attention obstacle !&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -123,20 +137,7 @@
         </widget>
        </item>
        <item>
-        <spacer name="horizontalSpacer_5">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Preferred</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>150</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
+        <layout class="QVBoxLayout" name="verticalLayout_8"/>
        </item>
       </layout>
      </item>
@@ -157,11 +158,15 @@
        <property name="font">
         <font>
          <pointsize>16</pointsize>
+         <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);</string>
+       </property>
        <property name="text">
-        <string>Déconnecter</string>
+        <string>Se déconnecter</string>
        </property>
       </widget>
      </item>
@@ -202,6 +207,9 @@
              <pointsize>12</pointsize>
             </font>
            </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
+           </property>
            <property name="text">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Capteurs de distance :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
@@ -211,6 +219,9 @@
           <layout class="QGridLayout" name="gridLayout_4">
            <item row="3" column="3">
             <widget class="QLabel" name="right_back_sensor">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
              <property name="text">
               <string>50cm</string>
              </property>
@@ -228,6 +239,9 @@
            </item>
            <item row="0" column="1">
             <widget class="QLabel" name="left_front_sensor">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
              <property name="text">
               <string>10cm</string>
              </property>
@@ -235,6 +249,9 @@
            </item>
            <item row="0" column="3">
             <widget class="QLabel" name="right_front_sensor">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
              <property name="text">
               <string>0cm</string>
              </property>
@@ -298,6 +315,9 @@
            </item>
            <item row="3" column="1">
             <widget class="QLabel" name="left_back_sensor">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
              <property name="text">
               <string>300cm</string>
              </property>
@@ -365,6 +385,10 @@
                <height>60</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(80, 80, 80);</string>
+             </property>
              <property name="text">
               <string>↓</string>
              </property>
@@ -409,6 +433,10 @@
                <height>60</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(80, 80, 80);</string>
+             </property>
              <property name="text">
               <string>→</string>
              </property>
@@ -433,6 +461,10 @@
                <width>60</width>
                <height>60</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(80, 80, 80);</string>
              </property>
              <property name="text">
               <string>←</string>
@@ -461,6 +493,10 @@
              </property>
              <property name="autoFillBackground">
               <bool>false</bool>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(80, 80, 80);</string>
              </property>
              <property name="text">
               <string>↑</string>
@@ -511,6 +547,9 @@
            <pointsize>15</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(255, 255, 255);</string>
+         </property>
          <property name="text">
           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Vitesse moyenne :&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; 100 km/h&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
@@ -535,6 +574,9 @@
           <layout class="QVBoxLayout" name="verticalLayout_6">
            <item>
             <widget class="QLabel" name="rotation_front_left">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
              <property name="text">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Roue avant gauche :&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;10 rps&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -542,6 +584,9 @@
            </item>
            <item>
             <widget class="QLabel" name="rotation_back_left">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
              <property name="text">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Roue arrière gauche :&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;300 rps&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -572,6 +617,9 @@
           <layout class="QVBoxLayout" name="verticalLayout_7">
            <item>
             <widget class="QLabel" name="rotation_front_right">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
              <property name="text">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Roue avant droite:&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;0rps&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -579,6 +627,9 @@
            </item>
            <item>
             <widget class="QLabel" name="rotation_back_right">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
              <property name="text">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Roue arrière droite :&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; 5 rps&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -700,6 +751,10 @@
                <height>60</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(80, 80, 80);</string>
+             </property>
              <property name="text">
               <string>↑</string>
              </property>
@@ -725,6 +780,10 @@
                <height>60</height>
               </size>
              </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(80, 80, 80);</string>
+             </property>
              <property name="text">
               <string>↓</string>
              </property>
@@ -749,6 +808,10 @@
                <width>60</width>
                <height>60</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(80, 80, 80);</string>
              </property>
              <property name="text">
               <string>←</string>
@@ -781,6 +844,10 @@
                <width>6</width>
                <height>60</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(80, 80, 80);</string>
              </property>
              <property name="text">
               <string>→</string>
@@ -820,7 +887,11 @@
       </spacer>
      </item>
      <item row="1" column="1">
-      <widget class="QWebEngineView" name="camView" native="true"/>
+      <widget class="QWebEngineView" name="camView">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -830,7 +901,7 @@
   <customwidget>
    <class>QWebEngineView</class>
    <extends>QWidget</extends>
-   <header>qwebengineview.h</header>
+   <header location="global">QtWebEngineWidgets/QWebEngineView</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
