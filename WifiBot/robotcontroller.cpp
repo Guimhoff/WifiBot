@@ -27,11 +27,8 @@ void robotController::on_disconnectButt_clicked()
 {
     robot->disConnect();
 }
-<<<<<<< Updated upstream
 
 void robotController::on_dirForward_clicked()
 {
     qDebug("coucou");
 }
-=======
->>>>>>> Stashed changes
