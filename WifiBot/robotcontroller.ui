@@ -64,7 +64,7 @@
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <widget class="QLabel" name="label_3">
+          <widget class="QLabel" name="ping">
            <property name="maximumSize">
             <size>
              <width>150</width>
@@ -100,7 +100,7 @@
         </layout>
        </item>
        <item>
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="obstacle_warning">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -215,16 +215,28 @@
           </spacer>
          </item>
          <item>
+          <widget class="QLabel" name="label_2">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Capteurs de distance :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <layout class="QGridLayout" name="gridLayout_4">
            <item row="3" column="3">
-            <widget class="QLabel" name="label_10">
+            <widget class="QLabel" name="right_back_sensor">
              <property name="text">
               <string>50cm</string>
              </property>
             </widget>
            </item>
            <item row="1" column="1" alignment="Qt::AlignHCenter">
-            <widget class="QCheckBox" name="checkBox">
+            <widget class="QCheckBox" name="switch_left_front_sensor">
              <property name="text">
               <string/>
              </property>
@@ -234,21 +246,21 @@
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QLabel" name="label_11">
+            <widget class="QLabel" name="left_front_sensor">
              <property name="text">
               <string>10cm</string>
              </property>
             </widget>
            </item>
            <item row="0" column="3">
-            <widget class="QLabel" name="label_12">
+            <widget class="QLabel" name="right_front_sensor">
              <property name="text">
               <string>0cm</string>
              </property>
             </widget>
            </item>
            <item row="1" column="3" alignment="Qt::AlignHCenter">
-            <widget class="QCheckBox" name="checkBox_2">
+            <widget class="QCheckBox" name="switch_right_front_sensor">
              <property name="text">
               <string/>
              </property>
@@ -258,7 +270,7 @@
             </widget>
            </item>
            <item row="2" column="1" alignment="Qt::AlignHCenter">
-            <widget class="QCheckBox" name="checkBox_3">
+            <widget class="QCheckBox" name="switch_left_back_sensor">
              <property name="text">
               <string/>
              </property>
@@ -268,7 +280,7 @@
             </widget>
            </item>
            <item row="2" column="3" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-            <widget class="QCheckBox" name="checkBox_4">
+            <widget class="QCheckBox" name="switch_right_back_sensor">
              <property name="text">
               <string/>
              </property>
@@ -304,7 +316,7 @@
             </spacer>
            </item>
            <item row="3" column="1">
-            <widget class="QLabel" name="label_9">
+            <widget class="QLabel" name="left_back_sensor">
              <property name="text">
               <string>300cm</string>
              </property>
@@ -512,7 +524,7 @@
         </spacer>
        </item>
        <item>
-        <widget class="QLabel" name="label_8">
+        <widget class="QLabel" name="speed">
          <property name="font">
           <font>
            <pointsize>15</pointsize>
@@ -541,14 +553,14 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_6">
            <item>
-            <widget class="QLabel" name="label_4">
+            <widget class="QLabel" name="rotation_front_left">
              <property name="text">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Roue avant gauche :&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;10 rps&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_5">
+            <widget class="QLabel" name="rotation_back_left">
              <property name="text">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Roue arrière gauche :&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;300 rps&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -578,14 +590,14 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_7">
            <item>
-            <widget class="QLabel" name="label_6">
+            <widget class="QLabel" name="rotation_front_right">
              <property name="text">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Roue avant droite:&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;0rps&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_7">
+            <widget class="QLabel" name="rotation_back_right">
              <property name="text">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Roue arrière droite :&lt;/p&gt;&lt;p align=&quot;center&quot;&gt; 5 rps&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
@@ -654,12 +666,12 @@
           <enum>Qt::Vertical</enum>
          </property>
          <property name="sizeType">
-          <enum>QSizePolicy::Preferred</enum>
+          <enum>QSizePolicy::Expanding</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>20</height>
+           <height>30</height>
           </size>
          </property>
         </spacer>
