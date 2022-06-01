@@ -49,8 +49,8 @@
        <widget class="QPushButton" name="Connection">
         <property name="minimumSize">
          <size>
-          <width>521</width>
-          <height>111</height>
+          <width>800</width>
+          <height>200</height>
          </size>
         </property>
         <property name="font">
