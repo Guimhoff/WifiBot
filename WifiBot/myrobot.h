@@ -14,6 +14,7 @@ public:
     explicit MyRobot(QObject *parent = 0);
     void doConnect();
     void disConnect();
+    short Crc16(unsigned char *Adresse_tab, unsigned char Taille_max);
     QByteArray DataToSend;
     QByteArray DataReceived;
     QMutex Mutex;
