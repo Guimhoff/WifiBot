@@ -6,27 +6,53 @@
    <rect>
     <x>0</x>
     <y>0</y>
+    <width>1280</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
     <width>800</width>
     <height>600</height>
-   </rect>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x1:1, y1:0, stop:0 rgba(255, 0, 0, 255), stop:0.339795 rgba(255, 0, 0, 255), stop:0.339799 rgba(255, 255, 255, 255), stop:0.662444 rgba(255, 255, 255, 255), stop:0.662469 rgba(0, 0, 255, 255), stop:1 rgba(0, 0, 255, 255));</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="minimumSize">
+    <size>
+     <width>800</width>
+     <height>578</height>
+    </size>
+   </property>
    <widget class="QPushButton" name="Connection">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>30</y>
-      <width>731</width>
-      <height>491</height>
+      <x>380</x>
+      <y>280</y>
+      <width>521</width>
+      <height>111</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>521</width>
+      <height>111</height>
+     </size>
     </property>
     <property name="font">
      <font>
-      <family>8514oem</family>
+      <family>Impact</family>
+      <pointsize>45</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255,255,255);
+background-color: rgb(68, 68, 68);</string>
     </property>
     <property name="text">
      <string>Connexion au robot</string>
