@@ -1,11 +1,15 @@
 #include "robotcontroller.h"
 #include "ui_robotcontroller.h"
 
+
 robotController::robotController(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::robotController)
 {
     ui->setupUi(this);
+    QWebEngineView *view = this->findChild<QWebEngineView*>("camView");
+    view->load(QUrl("http://192.168.1.106:8080/?action=stream"));
+    view->show();
 }
 
 robotController::~robotController()
@@ -23,8 +27,11 @@ void robotController::on_disconnectButt_clicked()
 {
     robot->disConnect();
 }
+<<<<<<< Updated upstream
 
 void robotController::on_dirForward_clicked()
 {
     qDebug("coucou");
 }
+=======
+>>>>>>> Stashed changes

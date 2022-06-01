@@ -2,6 +2,8 @@
 #define ROBOTCONTROLLER_H
 
 #include <QWidget>
+#include <QWebEngineView>
+#include <QApplication>
 #include "myrobot.h"
 
 namespace Ui {
@@ -16,8 +18,7 @@ public:
     explicit robotController(QWidget *parent = nullptr);
     ~robotController();
     void setRobot(MyRobot *robot);
-
-
+    QWebEngineView *view;
 
 private slots:
     void on_disconnectButt_clicked();
