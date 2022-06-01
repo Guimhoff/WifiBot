@@ -12,8 +12,8 @@ MyRobot::MyRobot(QObject *parent) : QObject(parent) {
     DataToSend[5] = 0x0;
     DataToSend[6] = 0x50;
 
-    unsigned char *add = (unsigned char *)DataToSend.data();
-    short crc = Crc16(add+1, 6);
+    unsigned char *ptr = (unsigned char *)DataToSend.data();
+    short crc = Crc16(ptr + 1, 6);
     DataToSend[7] = (char)crc;        // low byte
     DataToSend[8] = (char)(crc >> 8); // heigh byte
 
