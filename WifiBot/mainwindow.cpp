@@ -18,6 +18,6 @@ void MainWindow::on_Connection_clicked()
 {
     robot.doConnect();
     this->close();
-    r.show();
-    r.setRobot(&robot);
+    robotController.show();
+    robotController.setRobot(&robot);
 }

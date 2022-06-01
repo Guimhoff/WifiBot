@@ -23,6 +23,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     MyRobot robot;
-    robotController r;
+    robotController robotController;
 };
 #endif // MAINWINDOW_H
