@@ -16,6 +16,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_Connection_clicked()
 {
+    ui->Connection->setText("En cours de connexion...");
     robot.doConnect();
     this->close();
     robotController.show();
