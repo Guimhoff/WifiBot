@@ -28,7 +28,60 @@ void robotController::on_disconnectButt_clicked()
     this->close();
 }
 
-void robotController::on_dirForward_clicked()
+void robotController::on_dirForward_pressed()
 {
-    robot->move_forward();
+    qDebug("Avancée");
+    robot->left_speed(.5);
+    robot->right_speed(.5);
 }
+
+void robotController::on_dirForward_released()
+{
+    qDebug("Stop");
+    robot->left_speed(0);
+    robot->right_speed(0);
+}
+
+
+
+void robotController::on_dirLeft_pressed()
+{
+    robot->left_speed(0);
+    robot->right_speed(.5);
+}
+
+
+void robotController::on_dirLeft_released()
+{
+    robot->left_speed(0);
+    robot->right_speed(0);
+}
+
+
+void robotController::on_dirRight_pressed()
+{
+    robot->left_speed(.5);
+    robot->right_speed(0);
+}
+
+
+void robotController::on_dirRight_released()
+{
+    robot->left_speed(0);
+    robot->right_speed(0);
+}
+
+
+void robotController::on_dirBackward_pressed()
+{
+    robot->left_speed(-.5);
+    robot->right_speed(-.5);
+}
+
+
+void robotController::on_dirBackward_released()
+{
+    robot->left_speed(0);
+    robot->right_speed(0);
+}
+

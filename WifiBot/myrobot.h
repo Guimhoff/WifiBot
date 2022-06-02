@@ -15,7 +15,9 @@ public:
     void doConnect();
     void disConnect();
     short Crc16(unsigned char *Adresse_tab, unsigned char Taille_max);
-    void move_forward();
+
+    void left_speed(float speed);
+    void right_speed(float speed);
 
     QByteArray DataToSend;
     QByteArray DataReceived;
@@ -33,6 +35,7 @@ public slots:
 private:
     QTcpSocket *socket;
     QTimer *TimerEnvoi;
+    const int MAXSPEED = 255;
 };
 
 #endif // MYROBOT_H
