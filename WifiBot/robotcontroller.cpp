@@ -24,6 +24,7 @@ void robotController::setRobot(MyRobot *robot)
 void robotController::on_disconnectButt_clicked()
 {
     robot->disConnect();
+    this->close();
 }
 
 void robotController::on_dirForward_clicked()
