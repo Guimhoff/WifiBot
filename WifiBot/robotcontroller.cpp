@@ -20,6 +20,7 @@ robotController::~robotController()
 void robotController::setRobot(MyRobot *robot)
 {
     this->robot = robot;
+    connect(this->robot, SIGNAL(updateUI(const QByteArray Data)), this, SLOT(getData(const QByteArray Data)));
 }
 
 void robotController::on_disconnectButt_clicked()
@@ -85,3 +86,7 @@ void robotController::on_dirBackward_released()
     robot->right_speed(0);
 }
 
+void robotController::getData(const QByteArray Data)
+{
+    ui->battery->setValue((unsigned char) Data[2]);
+}
