@@ -6,16 +6,13 @@ MyRobot::MyRobot(QObject *parent) : QObject(parent) {
     DataToSend.resize(9);
     DataToSend[0] = 0xFF;
     DataToSend[1] = 0x07;
-    DataToSend[2] = 0x78;
+    DataToSend[2] = 0x0;
     DataToSend[3] = 0x0;
-    DataToSend[4] = 0x78;
+    DataToSend[4] = 0x0;
     DataToSend[5] = 0x0;
-    DataToSend[6] = 0x50;
-
-    unsigned char *add = (unsigned char *)DataToSend.data();
-    short crc = Crc16(add+1, 6);
-    DataToSend[7] = (char)crc;        // low byte
-    DataToSend[8] = (char)(crc >> 8); // heigh byte
+    DataToSend[6] = 0x0;
+    DataToSend[7] = 0x0;
+    DataToSend[8] = 0x0;
 
     DataReceived.resize(21);
     TimerEnvoi = new QTimer();
@@ -68,6 +65,12 @@ void MyRobot::readyRead() {
 
 void MyRobot::MyTimerSlot() {
     qDebug() << "Timer...";
+
+    unsigned char *add = (unsigned char *)DataToSend.data();
+    short crc = Crc16(add+1, 6);
+    DataToSend[7] = (char)crc;        // low byte
+    DataToSend[8] = (char)(crc >> 8); // heigh byte
+
     while(Mutex.tryLock());
     socket->write(DataToSend);
     Mutex.unlock();
@@ -94,4 +97,13 @@ short MyRobot::Crc16(unsigned char *Adresse_tab, unsigned char Taille_max)
         }
     }
     return (Crc);
+}
+
+void MyRobot::move_forward() {
+    DataToSend[2] = 0x78;
+    DataToSend[3] = 0x0;
+    DataToSend[4] = 0x78;
+    DataToSend[5] = 0x0;
+    DataToSend[6] = 0x50;
+    connect(TimerEnvoi, SIGNAL(timeout()), this, SLOT(MyTimerSlot()));
 }

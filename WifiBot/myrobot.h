@@ -15,6 +15,8 @@ public:
     void doConnect();
     void disConnect();
     short Crc16(unsigned char *Adresse_tab, unsigned char Taille_max);
+    void move_forward();
+
     QByteArray DataToSend;
     QByteArray DataReceived;
     QMutex Mutex;
