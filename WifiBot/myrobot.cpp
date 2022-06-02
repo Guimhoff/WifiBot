@@ -2,7 +2,10 @@
 
 #include "myrobot.h"
 
+
+
 MyRobot::MyRobot(QObject *parent) : QObject(parent) {
+
     DataToSend.resize(9);
     DataToSend[0] = 0xFF;
     DataToSend[1] = 0x07;
@@ -100,11 +103,39 @@ short MyRobot::Crc16(unsigned char *Adresse_tab, unsigned char Taille_max)
     return (Crc);
 }
 
-void MyRobot::move_forward() {
-    DataToSend[2] = 0x78;
-    DataToSend[3] = 0x0;
-    DataToSend[4] = 0x78;
-    DataToSend[5] = 0x0;
-    DataToSend[6] = 0x50;
-    connect(TimerEnvoi, SIGNAL(timeout()), this, SLOT(MyTimerSlot()));
+
+
+void MyRobot::left_speed(float speed) {
+    unsigned int intSpeed = (int)(speed * MAXSPEED);
+    bool forward = (speed > 0);
+
+    DataToSend[2] = intSpeed;
+    int rest = DataToSend[6];
+    if (forward)
+        rest |= 1UL << 6;
+    else
+        rest &= ~(1UL << 6);
+    DataToSend[6] = rest;
+
 }
+
+
+void MyRobot::right_speed(float speed) {
+    unsigned int intSpeed = (int)(speed * MAXSPEED);
+    bool forward = (speed > 0);
+
+    DataToSend[4] = intSpeed;
+    int rest = DataToSend[6];
+    if (forward)
+        rest |= 1UL << 4;
+    else
+        rest &= ~(1UL << 4);
+    DataToSend[6] = rest;
+
+}
+
+
+
+
+
+
