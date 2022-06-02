@@ -23,3 +23,10 @@ void MainWindow::on_Connection_clicked()
     robotController.show();
     robotController.setRobot(&robot);
 }
+
+void MainWindow::on_label_2_linkActivated(const QString &link)
+{
+    ui->label_2->setTextFormat(Qt::RichText);
+    ui->label_2->setTextInteractionFlags(Qt::TextBrowserInteraction);
+    ui->label_2->setOpenExternalLinks(true);
+}
