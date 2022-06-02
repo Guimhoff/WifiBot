@@ -24,7 +24,22 @@ public:
 
 private slots:
     void on_disconnectButt_clicked();
-    void on_dirForward_clicked();
+
+    void on_dirForward_released();
+
+    void on_dirForward_pressed();
+
+    void on_dirLeft_pressed();
+
+    void on_dirLeft_released();
+
+    void on_dirRight_pressed();
+
+    void on_dirRight_released();
+
+    void on_dirBackward_pressed();
+
+    void on_dirBackward_released();
 
 private:
     Ui::robotController *ui;
