@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
+    <width>1358</width>
     <height>720</height>
    </rect>
   </property>
@@ -32,7 +32,6 @@
          <property name="font">
           <font>
            <pointsize>18</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -123,7 +122,6 @@
           <font>
            <family>Impact</family>
            <pointsize>25</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
            <kerning>true</kerning>
           </font>
@@ -161,9 +159,11 @@
        <property name="font">
         <font>
          <pointsize>16</pointsize>
-         <weight>50</weight>
          <bold>false</bold>
         </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
        </property>
        <property name="styleSheet">
         <string notr="true">color: rgb(255, 255, 255);</string>
@@ -391,7 +391,6 @@
              <property name="font">
               <font>
                <pointsize>15</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -451,7 +450,6 @@ background-color: rgb(80, 80, 80);</string>
              <property name="font">
               <font>
                <pointsize>15</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -487,7 +485,6 @@ background-color: rgb(80, 80, 80);</string>
              <property name="font">
               <font>
                <pointsize>15</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -523,7 +520,6 @@ background-color: rgb(80, 80, 80);</string>
              <property name="font">
               <font>
                <pointsize>15</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -790,7 +786,6 @@ background-color: rgb(80, 80, 80);</string>
              <property name="font">
               <font>
                <pointsize>15</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -826,7 +821,6 @@ background-color: rgb(80, 80, 80);</string>
              <property name="font">
               <font>
                <pointsize>15</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -862,7 +856,6 @@ background-color: rgb(80, 80, 80);</string>
              <property name="font">
               <font>
                <pointsize>15</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -905,7 +898,6 @@ background-color: rgb(80, 80, 80);</string>
              <property name="font">
               <font>
                <pointsize>15</pointsize>
-               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
