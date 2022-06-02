@@ -20,6 +20,8 @@ public:
 private slots:
     void on_Connection_clicked();
 
+    void on_label_2_linkActivated(const QString &link);
+
 private:
     Ui::MainWindow *ui;
     MyRobot robot;

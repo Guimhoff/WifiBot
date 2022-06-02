@@ -30,5 +30,5 @@ void robotController::on_disconnectButt_clicked()
 
 void robotController::on_dirForward_clicked()
 {
-    qDebug("coucou");
+    robot->move_forward();
 }
