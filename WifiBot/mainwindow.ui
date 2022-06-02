@@ -92,6 +92,9 @@
           <pointsize>45</pointsize>
          </font>
         </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
         <property name="styleSheet">
          <string notr="true">color: rgb(255,255,255);
 background-color: rgb(80, 80, 80);</string>
