@@ -44,7 +44,6 @@ void robotController::on_dirForward_released()
 }
 
 
-
 void robotController::on_dirLeft_pressed()
 {
     robot->left_speed(0);
@@ -89,4 +88,31 @@ void robotController::on_dirBackward_released()
 void robotController::getData(const QByteArray Data)
 {
     ui->battery->setValue((unsigned char) Data[2]);
+}
+
+void robotController::on_viewLeft_pressed()
+{
+    QNetworkAccessManager *manager = new QNetworkAccessManager();
+    manager->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=200")));
+}
+
+
+void robotController::on_viewRight_pressed()
+{
+    QNetworkAccessManager *manager = new QNetworkAccessManager();
+    manager->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=-200")));
+}
+
+
+void robotController::on_viewUp_pressed()
+{
+    QNetworkAccessManager *manager = new QNetworkAccessManager();
+    manager->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=-200")));
+}
+
+
+void robotController::on_viewDown_pressed()
+{
+    QNetworkAccessManager *manager = new QNetworkAccessManager();
+    manager->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=200")));
 }

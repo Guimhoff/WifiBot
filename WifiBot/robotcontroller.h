@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QWebEngineView>
+#include <QNetworkAccessManager>
 #include <QApplication>
 #include "myrobot.h"
 
@@ -42,6 +43,14 @@ private slots:
     void on_dirBackward_released();
 
     void getData(const QByteArray Data);
+
+    void on_viewLeft_pressed();
+
+    void on_viewRight_pressed();
+
+    void on_viewUp_pressed();
+
+    void on_viewDown_pressed();
 
 private:
     Ui::robotController *ui;
