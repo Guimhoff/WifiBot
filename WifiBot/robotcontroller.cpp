@@ -20,7 +20,7 @@ robotController::~robotController()
 void robotController::setRobot(MyRobot *robot)
 {
     this->robot = robot;
-    connect(this->robot, SIGNAL(updateUI(const QByteArray Data)), this, SLOT(getData(const QByteArray Data)));
+    connect(this->robot, SIGNAL(updateUI(QByteArray)), this, SLOT(getData(QByteArray)));
 }
 
 void robotController::on_disconnectButt_clicked()
@@ -85,9 +85,20 @@ void robotController::on_dirBackward_released()
     robot->right_speed(0);
 }
 
-void robotController::getData(const QByteArray Data)
+void robotController::getData(QByteArray Data)
 {
-    ui->battery->setValue((unsigned char) Data[2]);
+    unsigned char batterylvl = Data[2];
+    int battery;
+    if(batterylvl > 123) {
+        ui->batteryLabel->setText("Batterie en charge");
+        battery = batterylvl*100/183;
+        ui->battery->setValue(battery);
+    }
+    else {
+        ui->batteryLabel->setText("Batterie");
+        battery = batterylvl*100/123;
+        ui->battery->setValue(battery);
+    }
 }
 
 void robotController::on_viewLeft_pressed()

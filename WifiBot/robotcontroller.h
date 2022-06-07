@@ -42,7 +42,7 @@ private slots:
 
     void on_dirBackward_released();
 
-    void getData(const QByteArray Data);
+    void getData(QByteArray Data);
 
     void on_viewLeft_pressed();
 
