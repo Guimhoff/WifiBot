@@ -115,12 +115,12 @@ void robotController::getData(QByteArray Data)
     int battery;
     if(batterylvl > 123) {
         ui->batteryLabel->setText("Batterie en charge");
-        battery = batterylvl*100/183;
+        battery = 100;
         ui->battery->setValue(battery);
     }
     else {
         ui->batteryLabel->setText("Batterie");
-        battery = batterylvl*100/123;
+        battery = ceil(batterylvl*100/123);
         ui->battery->setValue(battery);
     }
 }
