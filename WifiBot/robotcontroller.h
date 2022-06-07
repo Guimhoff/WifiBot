@@ -41,9 +41,17 @@ private slots:
 
     void on_dirBackward_released();
 
+    void moveOrder();
+
+    void robotController::keyPressEvent(QKeyEvent *ev);
+    void robotController::keyReleaseEvent(QKeyEvent *ev);
+
 private:
     Ui::robotController *ui;
     MyRobot *robot;
+
+    float forwardAxe;
+    float sideAxe;
 };
 
 #endif // ROBOTCONTROLLER_H
