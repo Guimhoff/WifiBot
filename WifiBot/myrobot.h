@@ -35,7 +35,7 @@ public slots:
 private:
     QTcpSocket *socket;
     QTimer *TimerEnvoi;
-    const int MAXSPEED = 255;
+    const int MAXSPEED = 254;
 };
 
 #endif // MYROBOT_H

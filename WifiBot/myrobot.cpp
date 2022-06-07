@@ -1,6 +1,7 @@
 // myrobot.cpp
 
 #include "myrobot.h"
+#include <QtMath>
 
 
 
@@ -105,7 +106,7 @@ short MyRobot::Crc16(unsigned char *Adresse_tab, unsigned char Taille_max)
 
 
 void MyRobot::left_speed(float speed) {
-    unsigned int intSpeed = (int)(speed * MAXSPEED);
+    unsigned int intSpeed = (int)(qFabs(speed) * MAXSPEED);
     bool forward = (speed > 0);
 
     DataToSend[2] = intSpeed;
@@ -120,7 +121,7 @@ void MyRobot::left_speed(float speed) {
 
 
 void MyRobot::right_speed(float speed) {
-    unsigned int intSpeed = (int)(speed * MAXSPEED);
+    unsigned int intSpeed = (int)(qFabs(speed) * MAXSPEED);
     bool forward = (speed > 0);
 
     DataToSend[4] = intSpeed;
