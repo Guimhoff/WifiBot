@@ -41,7 +41,7 @@ private slots:
 
     void on_dirBackward_released();
 
-    void getData(const QByteArray Data);
+    void getData(QByteArray Data);
 
 private:
     Ui::robotController *ui;
