@@ -166,7 +166,7 @@ void robotController::keyPressEvent(QKeyEvent *ev)
     //qDebug() << ("You Pressed Key " + key);
 
     QStringList keys;
-    keys << "Z" << "Q" << "S" << "D";
+    keys << "Z" << "Q" << "S" << "D" << "\u0012" << "\u0013" << "\u0014" << "\u0015";
 
     switch (keys.indexOf(key)) {
         case 0:
@@ -181,6 +181,18 @@ void robotController::keyPressEvent(QKeyEvent *ev)
         case 3:
             on_dirRight_pressed();
             break;
+        case 4:
+            on_viewLeft_pressed();
+            break;
+        case 5:
+            on_viewUp_pressed();
+            break;
+        case 6:
+            on_viewRight_pressed();
+            break;
+        case 7:
+            on_viewDown_pressed();
+            break;
     }
 }
 
@@ -191,7 +203,7 @@ void robotController::keyReleaseEvent(QKeyEvent *ev)
     //qDebug() << ("You Release Key " + key);
 
     QStringList keys;
-    keys << "Z" << "Q" << "S" << "D";
+    keys << "Z" << "Q" << "S" << "D" << "\u0012" << "\u0013" << "\u0014" << "\u0015";
 
     switch (keys.indexOf(key)) {
         case 0:
@@ -205,6 +217,14 @@ void robotController::keyReleaseEvent(QKeyEvent *ev)
             break;
         case 3:
             on_dirRight_released();
+            break;
+        case 4:
+            break;
+        case 5:
+            break;
+        case 6:
+            break;
+        case 7:
             break;
     }
 }
