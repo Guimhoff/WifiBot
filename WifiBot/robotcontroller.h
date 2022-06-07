@@ -56,12 +56,19 @@ private slots:
     void robotController::keyPressEvent(QKeyEvent *ev);
     void robotController::keyReleaseEvent(QKeyEvent *ev);
 
+    void on_vMax_sliderMoved(int position);
+
+    void on_rMax_sliderMoved(int position);
+
 private:
     Ui::robotController *ui;
     MyRobot *robot;
 
     float forwardAxe;
     float sideAxe;
+
+    float vMax;
+    float rMax;
 };
 
 #endif // ROBOTCONTROLLER_H

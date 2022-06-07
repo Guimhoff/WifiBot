@@ -15,6 +15,9 @@ robotController::robotController(QWidget *parent) :
 
     forwardAxe = 0;
     sideAxe = 0;
+
+    vMax = 100;
+    rMax = 100;
 }
 
 robotController::~robotController()
@@ -36,8 +39,14 @@ void robotController::on_disconnectButt_clicked()
 
 void robotController::moveOrder()
 {
-    float left = (forwardAxe + sideAxe)/fmax(1, qFabs(forwardAxe) + qFabs(sideAxe));
-    float right = (forwardAxe - sideAxe)/fmax(1, qFabs(forwardAxe) + qFabs(sideAxe));
+    float forward = vMax * forwardAxe / 100.0;
+    float side = rMax * sideAxe / 100.0;
+
+    qDebug() << forward;
+    qDebug() << side;
+
+    float left = (forward + side)/fmax(1, qFabs(forward) + qFabs(side));
+    float right = (forward - side)/fmax(1, qFabs(forward) + qFabs(side));
 
     if(forwardAxe < 0){
         float temp = right;
@@ -48,10 +57,6 @@ void robotController::moveOrder()
     robot->left_speed(left);
     robot->right_speed(right);
     qDebug("======");
-    qDebug() << forwardAxe;
-    qDebug() << sideAxe;
-    qDebug() << left;
-    qDebug() << right;
 
 }
 
@@ -204,4 +209,18 @@ void robotController::keyReleaseEvent(QKeyEvent *ev)
     }
 }
 
+
+
+void robotController::on_vMax_sliderMoved(int position)
+{
+    vMax = position;
+    moveOrder();
+}
+
+
+void robotController::on_rMax_sliderMoved(int position)
+{
+    rMax = position;
+    moveOrder();
+}
 
