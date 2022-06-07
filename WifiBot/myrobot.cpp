@@ -63,7 +63,6 @@ void MyRobot::readyRead() {
     qDebug() << "reading..."; // read the data from the socket
     DataReceived = socket->readAll();
     emit updateUI(DataReceived);
-    qDebug() << "Battery level : " << (unsigned char) DataReceived[2];
     qDebug() << (unsigned char) DataReceived[3] << (unsigned char) DataReceived[4] << (unsigned char) DataReceived[11] << (unsigned char) DataReceived[12];
 }
 
