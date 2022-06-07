@@ -86,8 +86,18 @@ void robotController::on_dirBackward_released()
     robot->right_speed(0);
 }
 
-void robotController::getData(const QByteArray Data)
+void robotController::getData(QByteArray Data)
 {
-    qDebug("'coucou");
-    ui->battery->setValue((unsigned char) Data[2]/2);
+    unsigned char batterylvl = Data[2];
+    int battery;
+    if(batterylvl > 123) {
+        ui->batteryLabel->setText("Batterie en charge");
+        battery = batterylvl*100/183;
+        ui->battery->setValue(battery);
+    }
+    else {
+        ui->batteryLabel->setText("Batterie");
+        battery = batterylvl*100/123;
+        ui->battery->setValue(battery);
+    }
 }
