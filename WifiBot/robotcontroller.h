@@ -69,6 +69,9 @@ private:
 
     float vMax;
     float rMax;
+
+    bool allowFront;
+    bool allowBack;
 };
 
 #endif // ROBOTCONTROLLER_H

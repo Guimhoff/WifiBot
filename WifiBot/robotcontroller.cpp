@@ -42,8 +42,12 @@ void robotController::moveOrder()
     float forward = vMax * forwardAxe / 100.0;
     float side = rMax * sideAxe / 100.0;
 
-    qDebug() << forward;
-    qDebug() << side;
+    if (!allowFront) {
+        forward = fmin(forward, 0);
+    }
+    if (!allowBack) {
+        forward = fmax(forward, 0);
+    }
 
     float left = (forward + side)/fmax(1, qFabs(forward) + qFabs(side));
     float right = (forward - side)/fmax(1, qFabs(forward) + qFabs(side));
@@ -56,7 +60,6 @@ void robotController::moveOrder()
 
     robot->left_speed(left);
     robot->right_speed(right);
-    qDebug("======");
 
 }
 
@@ -150,16 +153,27 @@ void robotController::getData(QByteArray Data)
         if (dist_av_d <= 30 || dist_av_g <= 30 || dist_arr_d <= 30) {
             ui->obstacle_warning->setText("Attention obstacle !");
             ui->obstacle_warning->setStyleSheet("QLabel {color : red;} ");
+            if (dist_arr_d <= 30) {
+                allowFront = true;
+                allowBack = false;
+            }
+            else {
+                allowFront = false;
+                allowBack = true;
+            };
         }
         else {
+            allowBack = true;
+            allowFront = true;
             ui->obstacle_warning->setText("Voie libre !");
             ui->obstacle_warning->setStyleSheet("QLabel {color : green;} ");
         }
     }
     else {
+            allowBack = true;
+            allowFront = true;
             ui->obstacle_warning->setText("");
         }
-
 }
 
 void robotController::on_viewLeft_pressed()
