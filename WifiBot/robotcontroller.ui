@@ -799,6 +799,11 @@ background-color: rgb(80, 80, 80);</string>
          </item>
          <item>
           <widget class="QPushButton" name="sequenceButton">
+           <property name="font">
+            <font>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
            <property name="text">
             <string>Parcours prédéfini</string>
            </property>
