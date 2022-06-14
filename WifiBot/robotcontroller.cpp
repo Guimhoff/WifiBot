@@ -173,9 +173,13 @@ void robotController::getData(QByteArray Data)
             allowBack = true;
             allowFront = true;
             ui->obstacle_warning->setText("");
-        }
-}
+    }
 
+    ///////// VITESSE /////////8
+    //float current_odometrie = ((((long) Data[8] << 24)) + (((long) Data[7] << 16)) + (((long) Data[6] << 8)) + ((long) Data[5]));
+    //int vitesse = round((current_odometrie - previous_odometrie)/75);
+    //float previous_odometrie = current_odometrie;
+}
 void robotController::on_viewLeft_pressed()
 {
     QNetworkAccessManager *manager = new QNetworkAccessManager();
