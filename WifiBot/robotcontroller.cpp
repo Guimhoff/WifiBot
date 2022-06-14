@@ -20,6 +20,8 @@ robotController::robotController(QWidget *parent) :
     vMax = 100;
     rMax = 100;
 
+    previous_odometrie = 0;
+
     gamepadAxisConf();
 }
 
@@ -173,16 +175,19 @@ void robotController::getData(QByteArray Data)
         }
     }
     else {
-            allowBack = true;
-            allowFront = true;
-            ui->obstacle_warning->setText("");
+        allowBack = true;
+        allowFront = true;
+        ui->obstacle_warning->setText("");
     }
 
-    ///////// VITESSE /////////8
-    //float current_odometrie = ((((long) Data[8] << 24)) + (((long) Data[7] << 16)) + (((long) Data[6] << 8)) + ((long) Data[5]));
-    //int vitesse = round((current_odometrie - previous_odometrie)/75);
-    //float previous_odometrie = current_odometrie;
+    ///////// VITESSE /////////
+    current_odometrie = ((((long) Data[8] << 24)) + (((long) Data[7] << 16)) + (((long) Data[6] << 8)) + ((long) Data[5]));
+    int vitesse = round(((current_odometrie - previous_odometrie)/(2448.0/44.0))/0.075);
+    ui->speedLabel->setText(QString::number(vitesse)+" cm/s");
+    previous_odometrie = current_odometrie;
+
 }
+
 void robotController::on_viewLeft_pressed()
 {
     QNetworkAccessManager *manager = new QNetworkAccessManager();

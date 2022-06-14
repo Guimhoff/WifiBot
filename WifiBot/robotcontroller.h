@@ -74,6 +74,9 @@ private:
 
     bool allowFront;
     bool allowBack;
+
+    float current_odometrie;
+    float previous_odometrie;
 };
 
 #endif // ROBOTCONTROLLER_H
