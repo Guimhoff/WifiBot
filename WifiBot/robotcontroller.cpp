@@ -2,6 +2,7 @@
 #include "ui_robotcontroller.h"
 #include <QKeyEvent>
 #include <QtMath>
+#include <QtGamepad>
 
 robotController::robotController(QWidget *parent) :
     QWidget(parent),
@@ -18,6 +19,8 @@ robotController::robotController(QWidget *parent) :
 
     vMax = 100;
     rMax = 100;
+
+    gamepadAxisConf();
 }
 
 robotController::~robotController()
@@ -222,5 +225,41 @@ void robotController::on_rMax_sliderMoved(int position)
 {
     rMax = position;
     moveOrder();
+}
+
+
+void robotController::gamepadAxisConf()
+{
+
+    connect(QGamepadManager::instance(), &QGamepadManager::gamepadAxisEvent, this,
+            [this](int deviceId, QGamepadManager::GamepadAxis axis, double value) {
+
+            int speed;
+            QString command;
+            QNetworkAccessManager *manager = new QNetworkAccessManager();
+
+            switch (axis) {
+                case QGamepadManager::AxisLeftX:
+                    sideAxe = value;
+                    moveOrder();
+                break;
+                case QGamepadManager::AxisLeftY:
+                    forwardAxe = -value;
+                    moveOrder();
+                break;
+                case QGamepadManager::AxisRightX:
+                    speed = 200 * value;
+                    command = "http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=" + (QString)(speed);
+                    manager->get(QNetworkRequest(QUrl(command)));
+                break;
+                case QGamepadManager::AxisRightY:
+                    speed = 200 * value;
+                    command = "http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=" + (QString)(speed);
+                    manager->get(QNetworkRequest(QUrl(command)));
+                break;
+
+            }
+    });
+
 }
 
