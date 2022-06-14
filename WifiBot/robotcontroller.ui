@@ -619,8 +619,19 @@ background-color: rgb(80, 80, 80);</string>
           <layout class="QGridLayout" name="gridLayout_4">
            <item row="2" column="2">
             <widget class="QLabel" name="ard">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
              <property name="text">
-              <string>TextLabel</string>
+              <string>50 cm</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -639,8 +650,19 @@ background-color: rgb(80, 80, 80);</string>
            </item>
            <item row="2" column="0">
             <widget class="QLabel" name="label_4">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
              <property name="text">
               <string>cassé</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
@@ -677,8 +699,19 @@ background-color: rgb(80, 80, 80);</string>
            </item>
            <item row="0" column="2">
             <widget class="QLabel" name="avd">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
              <property name="text">
-              <string>TextLabel</string>
+              <string>50 cm</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </item>
