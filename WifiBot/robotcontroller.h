@@ -60,6 +60,8 @@ private slots:
 
     void on_rMax_sliderMoved(int position);
 
+    void gamepadAxisConf();
+
 private:
     Ui::robotController *ui;
     MyRobot *robot;

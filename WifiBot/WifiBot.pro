@@ -4,6 +4,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 QT += multimedia
 QT += webenginewidgets
 QT += network
+QT += gamepad
 
 CONFIG += c++17
 
