@@ -75,7 +75,7 @@
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <widget class="QLabel" name="ping">
+          <widget class="QLabel" name="pingLabel">
            <property name="maximumSize">
             <size>
              <width>150</width>
@@ -130,10 +130,10 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(255, 0, 0);</string>
+          <string notr="true">color: rgb(0, 255, 0);</string>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Attention obstacle !&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#00ff00;&quot;&gt;Voie libre !&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -618,7 +618,7 @@ background-color: rgb(80, 80, 80);</string>
          <item>
           <layout class="QGridLayout" name="gridLayout_4">
            <item row="2" column="2">
-            <widget class="QLabel" name="ard">
+            <widget class="QLabel" name="ardLabel">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -698,7 +698,7 @@ background-color: rgb(80, 80, 80);</string>
             </widget>
            </item>
            <item row="0" column="2">
-            <widget class="QLabel" name="avd">
+            <widget class="QLabel" name="avdLabel">
              <property name="font">
               <font>
                <pointsize>12</pointsize>
@@ -735,7 +735,7 @@ background-color: rgb(80, 80, 80);</string>
          <item alignment="Qt::AlignHCenter">
           <widget class="QCheckBox" name="checkBox">
            <property name="enabled">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="font">
             <font>

@@ -57,18 +57,18 @@ void MyRobot::disconnected() {
 }
 
 void MyRobot::bytesWritten(qint64 bytes) {
-    qDebug() << bytes << " bytes written...";
+    //qDebug() << bytes << " bytes written...";
 }
 
 void MyRobot::readyRead() {
-    qDebug() << "reading..."; // read the data from the socket
+    //qDebug() << "reading..."; // read the data from the socket
     DataReceived = socket->readAll();
     emit updateUI(DataReceived);
     qDebug() << (unsigned char) DataReceived[3] << (unsigned char) DataReceived[4] << (unsigned char) DataReceived[11] << (unsigned char) DataReceived[12];
 }
 
 void MyRobot::MyTimerSlot() {
-    qDebug() << "Timer...";
+    //qDebug() << "Timer...";
 
     unsigned char *add = (unsigned char *)DataToSend.data();
     short crc = Crc16(add+1, 6);

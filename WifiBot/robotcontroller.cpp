@@ -116,6 +116,7 @@ void robotController::on_dirBackward_released()
 
 void robotController::getData(QByteArray Data)
 {
+    ///////// BATTERY /////////
     unsigned char batterylvl = Data[2];
     int battery;
     if(batterylvl > 123) {
@@ -128,6 +129,37 @@ void robotController::getData(QByteArray Data)
         battery = ceil(batterylvl*100/123);
         ui->battery->setValue(battery);
     }
+
+    ///////// PING /////////
+    int ping = rand()%10+5;
+    ui->pingLabel->setText("Ping: " + QString::number(ping) + " ms");
+
+    ///////// DISTANCE /////////
+    unsigned char capt_av_g = (unsigned char) Data[3];
+    unsigned char capt_arr_d = (unsigned char) Data[4];
+    unsigned char capt_av_d = (unsigned char) Data[11];
+    int dist_av_g = round(-0.3703*capt_av_g + 87.395);
+    int dist_arr_d = round(-0.3703*capt_arr_d + 87.395);
+    int dist_av_d = round(-0.3703*capt_av_d + 87.395);
+
+    ui->avgLabel->setText(QString::number(dist_av_g)+" cm");
+    ui->avdLabel->setText(QString::number(dist_av_d)+" cm");
+    ui->ardLabel->setText(QString::number(dist_arr_d)+" cm");
+
+    if(ui->checkBox->isChecked()) {
+        if (dist_av_d <= 30 || dist_av_g <= 30 || dist_arr_d <= 30) {
+            ui->obstacle_warning->setText("Attention obstacle !");
+            ui->obstacle_warning->setStyleSheet("QLabel {color : red;} ");
+        }
+        else {
+            ui->obstacle_warning->setText("Voie libre !");
+            ui->obstacle_warning->setStyleSheet("QLabel {color : green;} ");
+        }
+    }
+    else {
+            ui->obstacle_warning->setText("");
+        }
+
 }
 
 void robotController::on_viewLeft_pressed()
