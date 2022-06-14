@@ -133,9 +133,3 @@ void MyRobot::right_speed(float speed) {
     DataToSend[6] = rest;
 
 }
-
-
-
-
-
-

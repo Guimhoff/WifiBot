@@ -182,7 +182,7 @@ void robotController::getData(QByteArray Data)
 
     ///////// VITESSE /////////
     current_odometrie = ((((long) Data[8] << 24)) + (((long) Data[7] << 16)) + (((long) Data[6] << 8)) + ((long) Data[5]));
-    int vitesse = round(((current_odometrie - previous_odometrie)/(2448.0/44.0))/0.075);
+    int vitesse = round(((current_odometrie - previous_odometrie)*44.0/2448.0)/0.075);
     ui->speedLabel->setText(QString::number(vitesse)+" cm/s");
     previous_odometrie = current_odometrie;
 }
