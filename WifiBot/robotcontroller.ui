@@ -1035,13 +1035,6 @@ background-color: rgb(80, 80, 80);</string>
        </item>
       </layout>
      </item>
-     <item row="2" column="0">
-      <widget class="QPushButton" name="gamepadDebug">
-       <property name="text">
-        <string>Manette Debug</string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </item>
   </layout>
