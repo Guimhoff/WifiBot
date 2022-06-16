@@ -40,7 +40,7 @@ private slots:
 
     void on_dirBackward_released();
 
-    void getData(QByteArray Data);
+    void loopData(QByteArray Data);
 
     void on_viewLeft_pressed();
 
@@ -59,6 +59,14 @@ private slots:
     void on_rMax_sliderMoved(int position);
 
     void gamepadAxisConf();
+
+    void ping(QByteArray Data);
+
+    void batteryLevel(QByteArray Data);
+
+    void distance(QByteArray Data);
+
+    void vitesse(QByteArray Data);
 
 private:
     Ui::robotController *ui;

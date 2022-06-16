@@ -62,7 +62,7 @@ robotController::~robotController()
 void robotController::setRobot(MyRobot *robot)
 {
     this->robot = robot;
-    connect(this->robot, SIGNAL(updateUI(QByteArray)), this, SLOT(getData(QByteArray)));
+    connect(this->robot, SIGNAL(updateUI(QByteArray)), this, SLOT(loopData(QByteArray)));
 }
 
 /**
@@ -190,6 +190,10 @@ void robotController::on_dirBackward_released()
  */
 void robotController::loopData(QByteArray Data)
 {
+    ping();
+    batteryLevel(Data);
+    distance(Data);
+    vitesse(Data);
 }
 
 /**
