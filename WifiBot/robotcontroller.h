@@ -3,12 +3,12 @@
 
 #include <QWidget>
 #include <QWebEngineView>
-#include <QNetworkAccessManager>
-#include <QApplication>
+
 #include "myrobot.h"
 
-namespace Ui {
-class robotController;
+namespace Ui
+{
+    class robotController;
 }
 
 class robotController : public QWidget
@@ -20,8 +20,6 @@ public:
     ~robotController();
     void setRobot(MyRobot *robot);
     QWebEngineView *view;
-
-
 
 private slots:
     void on_disconnectButt_clicked();

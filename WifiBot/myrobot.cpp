@@ -1,11 +1,25 @@
 // myrobot.cpp
-
+/**
+ * @file myrobot.cpp
+ * @author your name (you@domain.com)
+ * @brief
+ * @version 0.1
+ * @date 2022-06-16
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #include "myrobot.h"
 #include <QtMath>
+#include <QObject>
+#include <QTcpSocket>
+#include <QAbstractSocket>
+#include <QDebug>
+#include <QTimer>
+#include <QMutex>
 
-
-
-MyRobot::MyRobot(QObject *parent) : QObject(parent) {
+MyRobot::MyRobot(QObject *parent) : QObject(parent)
+{
 
     DataToSend.resize(9);
     DataToSend[0] = 0xFF;
@@ -21,61 +35,68 @@ MyRobot::MyRobot(QObject *parent) : QObject(parent) {
     DataReceived.resize(21);
     TimerEnvoi = new QTimer();
     // setup signal and slot
-    connect(TimerEnvoi, SIGNAL(timeout()), this, SLOT(MyTimerSlot())); //Send data to wifibot timer
+    connect(TimerEnvoi, SIGNAL(timeout()), this, SLOT(MyTimerSlot())); // Send data to wifibot timer
 }
 
-
-void MyRobot::doConnect() {
+void MyRobot::doConnect()
+{
     socket = new QTcpSocket(this); // socket creation
-    connect(socket, SIGNAL(connected()),this, SLOT(connected()));
-    connect(socket, SIGNAL(disconnected()),this, SLOT(disconnected()));
-    connect(socket, SIGNAL(bytesWritten(qint64)),this, SLOT(bytesWritten(qint64)));
-    connect(socket, SIGNAL(readyRead()),this, SLOT(readyRead()));
+    connect(socket, SIGNAL(connected()), this, SLOT(connected()));
+    connect(socket, SIGNAL(disconnected()), this, SLOT(disconnected()));
+    connect(socket, SIGNAL(bytesWritten(qint64)), this, SLOT(bytesWritten(qint64)));
+    connect(socket, SIGNAL(readyRead()), this, SLOT(readyRead()));
     qDebug() << "connecting..."; // this is not blocking call
-    //socket->connectToHost("LOCALHOST", 15020);
+    // socket->connectToHost("LOCALHOST", 15020);
     socket->connectToHost("192.168.1.106", 15020); // connection to wifibot
     // we need to wait...
-    if(!socket->waitForConnected(5000)) {
+    if (!socket->waitForConnected(5000))
+    {
         qDebug() << "Error: " << socket->errorString();
         return;
     }
     TimerEnvoi->start(75);
-
 }
 
-void MyRobot::disConnect() {
+void MyRobot::disConnect()
+{
     TimerEnvoi->stop();
     socket->close();
 }
 
-void MyRobot::connected() {
+void MyRobot::connected()
+{
     qDebug() << "connected..."; // Hey server, tell me about you.
 }
 
-void MyRobot::disconnected() {
+void MyRobot::disconnected()
+{
     qDebug() << "disconnected...";
 }
 
-void MyRobot::bytesWritten(qint64 bytes) {
-    //qDebug() << bytes << " bytes written...";
+void MyRobot::bytesWritten(qint64 bytes)
+{
+    // qDebug() << bytes << " bytes written...";
 }
 
-void MyRobot::readyRead() {
-    //qDebug() << "reading..."; // read the data from the socket
+void MyRobot::readyRead()
+{
+    // qDebug() << "reading..."; // read the data from the socket
     DataReceived = socket->readAll();
     emit updateUI(DataReceived);
-    qDebug() << (unsigned char) DataReceived[3] << (unsigned char) DataReceived[4] << (unsigned char) DataReceived[11] << (unsigned char) DataReceived[12];
+    qDebug() << (unsigned char)DataReceived[3] << (unsigned char)DataReceived[4] << (unsigned char)DataReceived[11] << (unsigned char)DataReceived[12];
 }
 
-void MyRobot::MyTimerSlot() {
-    //qDebug() << "Timer...";
+void MyRobot::MyTimerSlot()
+{
+    // qDebug() << "Timer...";
 
     unsigned char *add = (unsigned char *)DataToSend.data();
-    short crc = Crc16(add+1, 6);
+    short crc = Crc16(add + 1, 6);
     DataToSend[7] = (char)crc;        // low byte
     DataToSend[8] = (char)(crc >> 8); // heigh byte
 
-    while(Mutex.tryLock());
+    while (Mutex.tryLock())
+        ;
     socket->write(DataToSend);
     Mutex.unlock();
 }
@@ -103,9 +124,8 @@ short MyRobot::Crc16(unsigned char *Adresse_tab, unsigned char Taille_max)
     return (Crc);
 }
 
-
-
-void MyRobot::left_speed(float speed) {
+void MyRobot::left_speed(float speed)
+{
     unsigned int intSpeed = (int)(qFabs(speed) * MAXSPEED);
     bool forward = (speed > 0);
 
@@ -116,11 +136,10 @@ void MyRobot::left_speed(float speed) {
     else
         rest &= ~(1UL << 6);
     DataToSend[6] = rest;
-
 }
 
-
-void MyRobot::right_speed(float speed) {
+void MyRobot::right_speed(float speed)
+{
     unsigned int intSpeed = (int)(qFabs(speed) * MAXSPEED);
     bool forward = (speed > 0);
 
@@ -131,5 +150,4 @@ void MyRobot::right_speed(float speed) {
     else
         rest &= ~(1UL << 4);
     DataToSend[6] = rest;
-
 }
