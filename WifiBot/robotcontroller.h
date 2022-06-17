@@ -68,6 +68,8 @@ private slots:
 
     void vitesse(QByteArray Data);
 
+    void on_sequenceButton_clicked();
+
 private:
     Ui::robotController *ui;
     MyRobot *robot;
