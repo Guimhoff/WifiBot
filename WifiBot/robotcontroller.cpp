@@ -202,6 +202,7 @@ void robotController::loopData(QByteArray Data)
     distance(Data);
     vitesse(Data);
     testAction();
+    moveOrder();
 }
 
 /**
@@ -559,7 +560,7 @@ void robotController::testAction() {
         forwardAxe = 0;
         sideAxe = 1;
         moveOrder();
-        waitingTime = 1000;
+        waitingTime = 690;
         break;
     case 2:
         forwardAxe = 1;
@@ -571,7 +572,7 @@ void robotController::testAction() {
         forwardAxe = 0;
         sideAxe = 1;
         moveOrder();
-        waitingTime = 1000;
+        waitingTime = 690;
         break;
     case 4:
         forwardAxe = 1;
@@ -583,7 +584,7 @@ void robotController::testAction() {
         forwardAxe = 0;
         sideAxe = 1;
         moveOrder();
-        waitingTime = 1000;
+        waitingTime = 690;
         break;
     case 6:
         forwardAxe = 1;
@@ -595,7 +596,7 @@ void robotController::testAction() {
         forwardAxe = 0;
         sideAxe = 1;
         moveOrder();
-        waitingTime = 1000;
+        waitingTime = 690;
         break;
     case 8:
         forwardAxe = 0;
