@@ -32,6 +32,7 @@
          <property name="font">
           <font>
            <pointsize>18</pointsize>
+           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -125,6 +126,7 @@
           <font>
            <family>Impact</family>
            <pointsize>25</pointsize>
+           <weight>50</weight>
            <bold>false</bold>
            <kerning>true</kerning>
           </font>
@@ -162,6 +164,7 @@
        <property name="font">
         <font>
          <pointsize>16</pointsize>
+         <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
@@ -417,6 +420,7 @@
              <property name="font">
               <font>
                <pointsize>15</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -452,6 +456,7 @@ background-color: rgb(80, 80, 80);</string>
              <property name="font">
               <font>
                <pointsize>15</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -487,6 +492,7 @@ background-color: rgb(80, 80, 80);</string>
              <property name="font">
               <font>
                <pointsize>15</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -532,6 +538,7 @@ background-color: rgb(80, 80, 80);</string>
              <property name="font">
               <font>
                <pointsize>15</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -765,6 +772,7 @@ background-color: rgb(80, 80, 80);</string>
            <property name="font">
             <font>
              <pointsize>12</pointsize>
+             <weight>50</weight>
              <bold>false</bold>
              <underline>false</underline>
              <strikeout>false</strikeout>
@@ -803,6 +811,9 @@ background-color: rgb(80, 80, 80);</string>
             <font>
              <pointsize>12</pointsize>
             </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
             <string>Parcours prédéfini</string>
@@ -859,6 +870,7 @@ background-color: rgb(80, 80, 80);</string>
              <property name="font">
               <font>
                <pointsize>15</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -894,6 +906,7 @@ background-color: rgb(80, 80, 80);</string>
              <property name="font">
               <font>
                <pointsize>15</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -929,6 +942,7 @@ background-color: rgb(80, 80, 80);</string>
              <property name="font">
               <font>
                <pointsize>15</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>
@@ -1004,6 +1018,7 @@ background-color: rgb(80, 80, 80);</string>
              <property name="font">
               <font>
                <pointsize>15</pointsize>
+               <weight>75</weight>
                <bold>true</bold>
               </font>
              </property>

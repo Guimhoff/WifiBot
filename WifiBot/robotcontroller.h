@@ -60,7 +60,7 @@ private slots:
 
     void gamepadAxisConf();
 
-    void ping(QByteArray Data);
+    void ping();
 
     void batteryLevel(QByteArray Data);
 
