@@ -108,6 +108,11 @@ void robotController::moveOrder()
     robot->right_speed(right);
 }
 
+void robotController::movementSequence() {
+    std::vector<String> direction = {"forward", "left", "forward", "left", "forward"} 
+    std::vector<int> delay = {} 
+} 
+
 /**
  * @brief robotController::on_dirForward_pressed
  * modifie l'axe d'avancée vers l'avant et déclenche moveOrder
