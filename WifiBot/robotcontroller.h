@@ -74,24 +74,37 @@ private slots:
     void testAction();
 
 private:
+    // Instance de l'interface
     Ui::robotController *ui;
+    // Instance de myrobot (interface avec le robot)
     MyRobot *robot;
 
+    // Axes d'ordres de déplacement (avant/arrière et gauche/droite)
     float forwardAxe;
     float sideAxe;
 
+    // Vitesse maximales de marche avant/arrière
     float vMax;
+    // Vitesse maximale de rotation
     float rMax;
 
+    // Le robot peut avancer
     bool allowFront;
+    // Le robot peut reculer
     bool allowBack;
 
+    // Odométrie actuelle
     float current_odometrie;
+    // Odométrie précédente (rafraichissement précédent)
     float previous_odometrie;
+    // Position de la dernière vitesse entrée dans le speed_tab
     int count_odo;
+    // Les 10 dernières vitesses reçues du robot
     int speed_tab[10] = {0,0,0,0,0,0,0,0,0,0};
 
+    // Temps auquel s'exécutera la prochaine action
     qint64 nextAction;
+    // index de l'action à effectuer
     int currentAction;
 };
 

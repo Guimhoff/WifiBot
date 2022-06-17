@@ -33,8 +33,11 @@ public slots:
     void MyTimerSlot();
 
 private:
+    // instance du socket liée à la connexion
     QTcpSocket *socket;
+    // Délai d'envoi des données
     QTimer *TimerEnvoi;
+    // constante définissant la vitesse max à envoyer au robot
     const int MAXSPEED = 254;
 };
 
