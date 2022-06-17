@@ -108,11 +108,6 @@ void robotController::moveOrder()
     robot->right_speed(right);
 }
 
-void robotController::movementSequence() {
-    std::vector<String> direction = {"forward", "left", "forward", "left", "forward"} 
-    std::vector<int> delay = {} 
-} 
-
 /**
  * @brief robotController::on_dirForward_pressed
  * modifie l'axe d'avancée vers l'avant et déclenche moveOrder
@@ -509,17 +504,45 @@ void robotController::gamepadAxisConf()
  */
 void robotController::on_sequenceButton_clicked()
 {
-    for(int k=0; k<4; k++)
-    {
-        forwardAxe = 1;
-        sideAxe = 0;
-        moveOrder();
-        Sleep(4000);
+    std::vector<int> direction = {1,-2,1,-2,1};
+    std::vector<int> delay = {1000,1000,1000,1000,1000};
+
+    for (int i = 0; i< direction.size(); i++) {
+
+        switch (direction.at(i)) {
+            case 1:
+                forwardAxe = 1;
+                sideAxe = 0;
+                moveOrder();
+                break;
+            case -1 :
+                forwardAxe = -1;
+                sideAxe = 0;
+                moveOrder();
+                break;
+            case -2 :
+                forwardAxe = 0;
+                sideAxe = -1;
+                moveOrder();
+                break;
+            case 2 :
+                forwardAxe = 0;
+                sideAxe = 1;
+                moveOrder();
+                break;
+        }
+
+        qint64 Time = QDateTime::currentMSecsSinceEpoch();
+        qint64 previous_Time = Time;
+        qDebug() << Time;
+        while (Time < previous_Time+delay.at(i)) {
+            Time = QDateTime::currentMSecsSinceEpoch();
+        }
 
         forwardAxe = 0;
-        sideAxe = -1;
+        sideAxe = 0;
         moveOrder();
-        Sleep(2000);
+        qDebug() << Time;
     }
 }
 

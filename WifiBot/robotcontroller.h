@@ -49,10 +49,11 @@ private slots:
     void on_viewUp_pressed();
 
     void on_viewDown_pressed();
+
     void moveOrder();
 
-    void robotController::keyPressEvent(QKeyEvent *ev);
-    void robotController::keyReleaseEvent(QKeyEvent *ev);
+    void keyPressEvent(QKeyEvent *ev);
+    void keyReleaseEvent(QKeyEvent *ev);
 
     void on_vMax_sliderMoved(int position);
 
