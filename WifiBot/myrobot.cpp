@@ -18,6 +18,11 @@
 #include <QTimer>
 #include <QMutex>
 
+/**
+ * @brief MyRobot::MyRobot
+ * Constructeur
+ * @param parent
+ */
 MyRobot::MyRobot(QObject *parent) : QObject(parent)
 {
 
@@ -38,6 +43,11 @@ MyRobot::MyRobot(QObject *parent) : QObject(parent)
     connect(TimerEnvoi, SIGNAL(timeout()), this, SLOT(MyTimerSlot())); // Send data to wifibot timer
 }
 
+
+/**
+ * @brief MyRobot::doConnect
+ * Initie le protocole de connexion au robot
+ */
 void MyRobot::doConnect()
 {
     socket = new QTcpSocket(this); // socket creation
@@ -57,27 +67,48 @@ void MyRobot::doConnect()
     TimerEnvoi->start(75);
 }
 
+/**
+ * @brief MyRobot::disConnect
+ * Déconnecte le robot
+ */
 void MyRobot::disConnect()
 {
     TimerEnvoi->stop();
     socket->close();
 }
 
+/**
+ * @brief MyRobot::connected
+ * Information dans la console d'une connexion réussie
+ */
 void MyRobot::connected()
 {
     qDebug() << "connected..."; // Hey server, tell me about you.
 }
 
+/**
+ * @brief MyRobot::disconnected
+ * Information dans la console de la fin de connexion
+ */
 void MyRobot::disconnected()
 {
     qDebug() << "disconnected...";
 }
 
+/**
+ * @brief MyRobot::bytesWritten*
+ * Information dans la console de l'envoi d'informations au robot
+ * @param bytes
+ */
 void MyRobot::bytesWritten(qint64 bytes)
 {
     // qDebug() << bytes << " bytes written...";
 }
 
+/**
+ * @brief MyRobot::readyRead
+ * Protocole de réception des données envoyées par le roboto
+ */
 void MyRobot::readyRead()
 {
     // qDebug() << "reading..."; // read the data from the socket
@@ -86,6 +117,10 @@ void MyRobot::readyRead()
     qDebug() << (unsigned char)DataReceived[3] << (unsigned char)DataReceived[4] << (unsigned char)DataReceived[11] << (unsigned char)DataReceived[12];
 }
 
+/**
+ * @brief MyRobot::MyTimerSlot
+ * Envoi récurrent des données
+ */
 void MyRobot::MyTimerSlot()
 {
     // qDebug() << "Timer...";
@@ -101,6 +136,13 @@ void MyRobot::MyTimerSlot()
     Mutex.unlock();
 }
 
+/**
+ * @brief MyRobot::Crc16
+ * Calcul du crc
+ * @param Adresse_tab
+ * @param Taille_max
+ * @return crc
+ */
 short MyRobot::Crc16(unsigned char *Adresse_tab, unsigned char Taille_max)
 {
     unsigned int Crc = 0xFFFF;
@@ -124,6 +166,11 @@ short MyRobot::Crc16(unsigned char *Adresse_tab, unsigned char Taille_max)
     return (Crc);
 }
 
+/**
+ * @brief MyRobot::left_speed
+ * Contrôle la vitesse du train gauche du robot
+ * @param speed (de -1 à 1)
+ */
 void MyRobot::left_speed(float speed)
 {
     unsigned int intSpeed = (int)(qFabs(speed) * MAXSPEED);
@@ -138,6 +185,11 @@ void MyRobot::left_speed(float speed)
     DataToSend[6] = rest;
 }
 
+/**
+ * @brief MyRobot::right_speed
+ * Contrôle la vitesse du train droit du robot
+ * @param speed (de -1 à 1)
+ */
 void MyRobot::right_speed(float speed)
 {
     unsigned int intSpeed = (int)(qFabs(speed) * MAXSPEED);

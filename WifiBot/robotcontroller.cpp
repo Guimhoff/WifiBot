@@ -22,7 +22,7 @@
 
 /**
  * @brief Construct a new robot Controller::robot Controller object
- *
+ * Constructeur
  * @param parent Qwidget
  */
 robotController::robotController(QWidget *parent) : QWidget(parent),
@@ -47,7 +47,7 @@ robotController::robotController(QWidget *parent) : QWidget(parent),
 
 /**
  * @brief Destroy the robot Controller::robot Controller object
- *
+ * Destructeur
  */
 robotController::~robotController()
 {
@@ -55,9 +55,9 @@ robotController::~robotController()
 }
 
 /**
- * @brief
- *
- * @param robot Myrobot
+ * @brief robotController::setRobot
+ * Setteur du robot et connexion de la méthode réception des données
+ * @param robot
  */
 void robotController::setRobot(MyRobot *robot)
 {
@@ -66,8 +66,8 @@ void robotController::setRobot(MyRobot *robot)
 }
 
 /**
- * @brief
- *
+ * @brief robotController::on_disconnectButt_clicked
+ * Appelle la méthode de déconnexion du robot et ferme la fenêtre
  */
 void robotController::on_disconnectButt_clicked()
 {
@@ -76,8 +76,9 @@ void robotController::on_disconnectButt_clicked()
 }
 
 /**
- * @brief
- *
+ * @brief robotController::moveOrder
+ * Transmet à myrobot les ordres de déplacement en fonction des axes de déplacement
+ * et de la vitesse max définie dans l'interface
  */
 void robotController::moveOrder()
 {
@@ -108,8 +109,8 @@ void robotController::moveOrder()
 }
 
 /**
- * @brief
- *
+ * @brief robotController::on_dirForward_pressed
+ * modifie l'axe d'avancée vers l'avant et déclenche moveOrder
  */
 void robotController::on_dirForward_pressed()
 {
@@ -118,8 +119,8 @@ void robotController::on_dirForward_pressed()
 }
 
 /**
- * @brief
- *
+ * @brief robotController::on_dirForward_released
+ * remet l'axe d'avancée à 0 et déclenche moveOrder
  */
 void robotController::on_dirForward_released()
 {
@@ -128,8 +129,8 @@ void robotController::on_dirForward_released()
 }
 
 /**
- * @brief
- *
+ * @brief robotController::on_dirLeft_pressed
+ * modifie l'axe de direction vers la gauche et déclenche moveOrder
  */
 void robotController::on_dirLeft_pressed()
 {
@@ -137,6 +138,10 @@ void robotController::on_dirLeft_pressed()
     moveOrder();
 }
 
+/**
+ * @brief robotController::on_dirLeft_released
+ * remet l'axe de direction à 0 et déclenche moveOrder
+ */
 void robotController::on_dirLeft_released()
 {
     sideAxe = 0;
@@ -144,8 +149,8 @@ void robotController::on_dirLeft_released()
 }
 
 /**
- * @brief
- *
+ * @brief robotController::on_dirRight_pressed
+ * modifie l'axe de direction vers la droite et déclenche moveOrder
  */
 void robotController::on_dirRight_pressed()
 {
@@ -154,8 +159,8 @@ void robotController::on_dirRight_pressed()
 }
 
 /**
- * @brief
- *
+ * @brief robotController::on_dirRight_released
+ * remet l'axe de direction à 0 et déclenche moveOrder
  */
 void robotController::on_dirRight_released()
 {
@@ -164,8 +169,8 @@ void robotController::on_dirRight_released()
 }
 
 /**
- * @brief
- *
+ * @brief robotController::on_dirBackward_pressed
+ * modifie l'axe d'avancée vers l'arrière et déclenche moveOrder
  */
 void robotController::on_dirBackward_pressed()
 {
@@ -174,8 +179,8 @@ void robotController::on_dirBackward_pressed()
 }
 
 /**
- * @brief
- *
+ * @brief robotController::on_dirBackward_released
+ * remet l'axe d'avancée à 0 et déclenche moveOrder
  */
 void robotController::on_dirBackward_released()
 {
@@ -184,8 +189,8 @@ void robotController::on_dirBackward_released()
 }
 
 /**
- * @brief
- *
+ * @brief robotController::loopData
+ * Fonction appelée lors de la réception des données
  * @param Data
  */
 void robotController::loopData(QByteArray Data)
@@ -197,8 +202,9 @@ void robotController::loopData(QByteArray Data)
 }
 
 /**
- * @brief
- *
+ * @brief robotController::ping
+ * Calcul de la latence par une formule vraiment compliquée
+ * Affichage sur l'interface
  */
 void robotController::ping()
 {
@@ -207,8 +213,8 @@ void robotController::ping()
 }
 
 /**
- * @brief
- *
+ * @brief robotController::batteryLevel
+ * Calcul et affichage du niveau de la batterie
  * @param Data
  */
 void robotController::batteryLevel(QByteArray Data)
@@ -230,8 +236,8 @@ void robotController::batteryLevel(QByteArray Data)
 }
 
 /**
- * @brief
- *
+ * @brief robotController::distance
+ * Calcul et affichage de la distance des capteurs infrarouges
  * @param Data
  */
 void robotController::distance(QByteArray Data)
@@ -282,8 +288,8 @@ void robotController::distance(QByteArray Data)
 }
 
 /**
- * @brief
- *
+ * @brief robotController::vitesse
+ * Calcul et affichage de la vitesse du robot
  * @param Data
  */
 void robotController::vitesse(QByteArray Data)
@@ -296,8 +302,8 @@ void robotController::vitesse(QByteArray Data)
 }
 
 /**
- * @brief
- *
+ * @brief robotController::on_viewLeft_pressed
+ * Déplacement de la webcam vers la gauche
  */
 void robotController::on_viewLeft_pressed()
 {
@@ -306,8 +312,8 @@ void robotController::on_viewLeft_pressed()
 }
 
 /**
- * @brief
- *
+ * @brief robotController::on_viewRight_pressed
+ * Déplacement de la webcam vers la droite
  */
 void robotController::on_viewRight_pressed()
 {
@@ -316,8 +322,8 @@ void robotController::on_viewRight_pressed()
 }
 
 /**
- * @brief
- *
+ * @brief robotController::on_viewUp_pressed
+ * Déplacement de la webcam vers le haut
  */
 void robotController::on_viewUp_pressed()
 {
@@ -326,8 +332,8 @@ void robotController::on_viewUp_pressed()
 }
 
 /**
- * @brief
- *
+ * @brief robotController::on_viewDown_pressed
+ * Déplacement de la webcam vers le bas
  */
 void robotController::on_viewDown_pressed()
 {
@@ -336,8 +342,8 @@ void robotController::on_viewDown_pressed()
 }
 
 /**
- * @brief
- *
+ * @brief robotController::keyPressEvent
+ * Lien des appuis de touches vers les fonctions associées
  * @param ev
  */
 void robotController::keyPressEvent(QKeyEvent *ev)
@@ -386,8 +392,8 @@ void robotController::keyPressEvent(QKeyEvent *ev)
 }
 
 /**
- * @brief
- *
+ * @brief robotController::keyReleaseEvent
+ * Lien des relachement de touches vers les fonctions associées
  * @param ev
  */
 void robotController::keyReleaseEvent(QKeyEvent *ev)
@@ -432,8 +438,8 @@ void robotController::keyReleaseEvent(QKeyEvent *ev)
 }
 
 /**
- * @brief
- *
+ * @brief robotController::on_vMax_sliderMoved
+ * Action lors de la modification du slider de vitesse max
  * @param position
  */
 void robotController::on_vMax_sliderMoved(int position)
@@ -443,8 +449,8 @@ void robotController::on_vMax_sliderMoved(int position)
 }
 
 /**
- * @brief
- *
+ * @brief robotController::on_rMax_sliderMoved
+ * Action lors de la modification du slider de rotation max
  * @param position
  */
 void robotController::on_rMax_sliderMoved(int position)
@@ -454,8 +460,9 @@ void robotController::on_rMax_sliderMoved(int position)
 }
 
 /**
- * @brief
- *
+ * @brief robotController::gamepadAxisConf
+ * Configuration des axes de la manette
+ * pour contrôler le robot
  */
 void robotController::gamepadAxisConf()
 {
@@ -490,3 +497,24 @@ void robotController::gamepadAxisConf()
                 }
             });
 }
+
+/**
+ * @brief robotController::on_sequenceButton_clicked
+ * Lance le parcours prédéfini du robot
+ */
+void robotController::on_sequenceButton_clicked()
+{
+    for(int k=0; k<4; k++)
+    {
+        forwardAxe = 1;
+        sideAxe = 0;
+        moveOrder();
+        Sleep(4000);
+
+        forwardAxe = 0;
+        sideAxe = -1;
+        moveOrder();
+        Sleep(2000);
+    }
+}
+

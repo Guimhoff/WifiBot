@@ -23,6 +23,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/**
+ * @brief MainWindow::on_Connection_clicked
+ * Déclenche une tentative de connexion au robot
+ * et le changement d'interface
+ */
 void MainWindow::on_Connection_clicked()
 {
     ui->Connection->setText("En cours de connexion...");
@@ -33,6 +38,11 @@ void MainWindow::on_Connection_clicked()
     robotController.setRobot(&robot);
 }
 
+/**
+ * @brief MainWindow::on_label_2_linkActivated
+ * Redirection vers le github du projet
+ * @param link
+ */
 void MainWindow::on_label_2_linkActivated(const QString &link)
 {
     ui->label_2->setTextFormat(Qt::RichText);
