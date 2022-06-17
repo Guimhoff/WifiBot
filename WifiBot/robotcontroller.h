@@ -85,6 +85,8 @@ private:
 
     float current_odometrie;
     float previous_odometrie;
+    int count_odo;
+    int speed_tab[10] = {0,0,0,0,0,0,0,0,0,0};
 };
 
 #endif // ROBOTCONTROLLER_H

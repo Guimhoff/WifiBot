@@ -41,6 +41,7 @@ robotController::robotController(QWidget *parent) : QWidget(parent),
     rMax = 100;
 
     previous_odometrie = 0;
+    count_odo = 0;
 
     gamepadAxisConf();
 }
@@ -297,7 +298,18 @@ void robotController::vitesse(QByteArray Data)
 
     current_odometrie = ((((long)Data[8] << 24)) + (((long)Data[7] << 16)) + (((long)Data[6] << 8)) + ((long)Data[5]));
     int vitesse = round(((current_odometrie - previous_odometrie) * 44.0 / 2448.0) / 0.075);
-    ui->speedLabel->setText(QString::number(vitesse) + " cm/s");
+
+    speed_tab[count_odo] = vitesse;
+    count_odo++;
+    count_odo %= 10;
+
+    float sum = 0;
+    for(int k=0; k<10; k++){
+        sum += speed_tab[k];
+    }
+    sum /= 10;
+
+    ui->speedLabel->setText(QString::number(sum) + " cm/s");
     previous_odometrie = current_odometrie;
 }
 
@@ -484,15 +496,29 @@ void robotController::gamepadAxisConf()
                     forwardAxe = -value;
                     moveOrder();
                     break;
-                case QGamepadManager::AxisRightX:
-                    speed = 200 * value;
-                    command = "http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=" + (QString)(speed);
-                    manager->get(QNetworkRequest(QUrl(command)));
+                }
+            });
+
+    connect(QGamepadManager::instance(), &QGamepadManager::gamepadButtonPressEvent, this,
+            [this](int deviceId, QGamepadManager::GamepadButton button, double value)
+            {
+                int speed;
+                QString command;
+                QNetworkAccessManager *manager = new QNetworkAccessManager();
+
+                switch (button)
+                {
+                case QGamepadManager::ButtonUp:
+                    manager->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=-200")));
                     break;
-                case QGamepadManager::AxisRightY:
-                    speed = 200 * value;
-                    command = "http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=" + (QString)(speed);
-                    manager->get(QNetworkRequest(QUrl(command)));
+                case QGamepadManager::ButtonDown:
+                    manager->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=200")));
+                    break;
+                case QGamepadManager::ButtonLeft:
+                    manager->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=200")));
+                    break;
+                case QGamepadManager::ButtonRight:
+                    manager->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=-200")));
                     break;
                 }
             });
@@ -504,6 +530,9 @@ void robotController::gamepadAxisConf()
  */
 void robotController::on_sequenceButton_clicked()
 {
+
+
+
     for(int k=0; k<4; k++)
     {
         forwardAxe = 1;
