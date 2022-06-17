@@ -1,23 +1,32 @@
 /**
  * @file mainwindow.cpp
- * @author your name (you@domain.com)
- * @brief
- * @version 0.1
- * @date 2022-06-16
+ * @author IMHOFF Guillaume, COUTAREL  Allan, CHENY Valentin
+ * @brief  Fichier d'affichage de la fenêtre de connexion au Wifibot
+ * @date 2022-06-17
  *
  * @copyright Copyright (c) 2022
  *
  */
 
+// Fichiers header importés
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+/**
+ * @brief Construct a new Main Window:: Main Window object
+ * 
+ * @param parent 
+ */
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 }
 
+/**
+ * @brief Destroy the Main Window:: Main Window object
+ * 
+ */
 MainWindow::~MainWindow()
 {
     delete ui;

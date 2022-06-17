@@ -1,9 +1,22 @@
+/**
+ * @file robotcontroller.h
+ * @author IMHOFF Guillaume, COUTAREL  Allan, CHENY Valentin
+ * @brief  Fichier header de robotcontroller.h
+ * @date 2022-06-17
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
+
+
 #ifndef ROBOTCONTROLLER_H
 #define ROBOTCONTROLLER_H
 
+// Librairies importées
 #include <QWidget>
 #include <QWebEngineView>
 
+// Fichier header importé
 #include "myrobot.h"
 
 namespace Ui

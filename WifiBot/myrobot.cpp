@@ -1,15 +1,14 @@
-// myrobot.cpp
 /**
  * @file myrobot.cpp
- * @author your name (you@domain.com)
- * @brief
- * @version 0.1
- * @date 2022-06-16
+ * @author GINHAC DOMINIQUE, IMHOFF Guillaume, COUTAREL  Allan, CHENY Valentin
+ * @brief  Fichier de fonctions de communication avec le robot
+ * @date 2022-06-17
  *
  * @copyright Copyright (c) 2022
  *
  */
-#include "myrobot.h"
+
+// Librairies importées
 #include <QtMath>
 #include <QObject>
 #include <QTcpSocket>
@@ -17,6 +16,9 @@
 #include <QDebug>
 #include <QTimer>
 #include <QMutex>
+
+// Fichier header importé
+#include "myrobot.h"
 
 /**
  * @brief MyRobot::MyRobot

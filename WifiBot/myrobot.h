@@ -1,6 +1,17 @@
+/**
+ * @file myrobot.h
+ * @author GINHAC DOMINIQUE, IMHOFF Guillaume, COUTAREL  Allan, CHENY Valentin
+ * @brief  Fichier header de myrobot.cpp
+ * @date 2022-06-17
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
+
 #ifndef MYROBOT_H
 #define MYROBOT_H
 
+// Librairies importées
 #include <QObject>
 #include <QTcpSocket>
 #include <QAbstractSocket>
