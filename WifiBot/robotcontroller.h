@@ -71,6 +71,8 @@ private slots:
 
     void on_sequenceButton_clicked();
 
+    void testAction();
+
 private:
     Ui::robotController *ui;
     MyRobot *robot;
@@ -88,6 +90,9 @@ private:
     float previous_odometrie;
     int count_odo;
     int speed_tab[10] = {0,0,0,0,0,0,0,0,0,0};
+
+    qint64 nextAction;
+    int currentAction;
 };
 
 #endif // ROBOTCONTROLLER_H

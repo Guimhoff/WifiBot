@@ -44,6 +44,8 @@ robotController::robotController(QWidget *parent) : QWidget(parent),
     count_odo = 0;
 
     gamepadAxisConf();
+
+    currentAction = -1;
 }
 
 /**
@@ -200,6 +202,7 @@ void robotController::loopData(QByteArray Data)
     batteryLevel(Data);
     distance(Data);
     vitesse(Data);
+    testAction();
 }
 
 /**
@@ -530,45 +533,81 @@ void robotController::gamepadAxisConf()
  */
 void robotController::on_sequenceButton_clicked()
 {
-    std::vector<int> direction = {1,-2,1,-2,1};
-    std::vector<int> delay = {1000,1000,1000,1000,1000};
+    currentAction = 0;
+    nextAction = 0;
+}
 
-    for (int i = 0; i< direction.size(); i++) {
+/**
+ * @brief robotController::testAction
+ * Vérifie l'état de l'action à effectuer et l'effectue le cas échéant
+ */
+void robotController::testAction() {
 
-        switch (direction.at(i)) {
-            case 1:
-                forwardAxe = 1;
-                sideAxe = 0;
-                moveOrder();
-                break;
-            case -1 :
-                forwardAxe = -1;
-                sideAxe = 0;
-                moveOrder();
-                break;
-            case -2 :
-                forwardAxe = 0;
-                sideAxe = -1;
-                moveOrder();
-                break;
-            case 2 :
-                forwardAxe = 0;
-                sideAxe = 1;
-                moveOrder();
-                break;
-        }
+    if(currentAction < 0) return;
 
-        qint64 Time = QDateTime::currentMSecsSinceEpoch();
-        qint64 previous_Time = Time;
-        qDebug() << Time;
-        while (Time < previous_Time+delay.at(i)) {
-            Time = QDateTime::currentMSecsSinceEpoch();
-        }
+    if(QDateTime::currentMSecsSinceEpoch() < nextAction) return;
 
+    qint64 waitingTime = 0;
+
+    switch (currentAction){
+    case 0:
+        forwardAxe = 1;
+        sideAxe = 0;
+        moveOrder();
+        waitingTime = 2000;
+        break;
+    case 1:
+        forwardAxe = 0;
+        sideAxe = 1;
+        moveOrder();
+        waitingTime = 1000;
+        break;
+    case 2:
+        forwardAxe = 1;
+        sideAxe = 0;
+        moveOrder();
+        waitingTime = 2000;
+        break;
+    case 3:
+        forwardAxe = 0;
+        sideAxe = 1;
+        moveOrder();
+        waitingTime = 1000;
+        break;
+    case 4:
+        forwardAxe = 1;
+        sideAxe = 0;
+        moveOrder();
+        waitingTime = 2000;
+        break;
+    case 5:
+        forwardAxe = 0;
+        sideAxe = 1;
+        moveOrder();
+        waitingTime = 1000;
+        break;
+    case 6:
+        forwardAxe = 1;
+        sideAxe = 0;
+        moveOrder();
+        waitingTime = 2000;
+        break;
+    case 7:
+        forwardAxe = 0;
+        sideAxe = 1;
+        moveOrder();
+        waitingTime = 1000;
+        break;
+    case 8:
         forwardAxe = 0;
         sideAxe = 0;
         moveOrder();
-        qDebug() << Time;
+        currentAction = -2;
+        break;
     }
-}
 
+    currentAction++;
+
+    nextAction = QDateTime::currentMSecsSinceEpoch() + waitingTime;
+
+}
